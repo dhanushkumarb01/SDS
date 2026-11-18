@@ -1,0 +1,30 @@
+{
+  "mode": "B2",
+  "scenario": "S5",
+  "rep": 2,
+  "name": "Low-and-slow scan from an insider laptop",
+  "attacker": "u3",
+  "actor": "u3",
+  "attack_start": 1792005737.3717623,
+  "attack_end": 1792005749.4291651,
+  "window_s": 5,
+  "warmup": 25,
+  "attack": 40,
+  "cooldown": 10,
+  "poisoned_victims": [],
+  "attacker_retains_access": false,
+  "stats_end": {
+    "mode": "B2",
+    "uptime_s": 79,
+    "switches": 5,
+    "packet_in_total": 107,
+    "decisions_total": 36,
+    "decision_us_mean": 403.8,
+    "decision_us_p95": 933.3,
+    "cpu_pct": 0.0,
+    "mem_mb": 69.2,
+    "packet_in_per_s": 0.0,
+    "flow_count": 149,
+    "allow_rules": 26
+  }
+}

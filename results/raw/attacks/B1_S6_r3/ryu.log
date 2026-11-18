@@ -1,0 +1,18 @@
+loading app /home/dhanush_700810/aegis-zt/controller/aegis_app.py
+loading app ryu.controller.ofp_handler
+creating context wsgi
+instantiating app /home/dhanush_700810/aegis-zt/controller/aegis_app.py of AegisZT
+AEGIS-ZT started: mode=B1, 13 enrolled hosts, 5 switches, logs=/home/dhanush_700810/aegis-zt/results/raw/attacks/B1_S6_r3
+instantiating app ryu.controller.ofp_handler of OFPHandler
+(66138) wsgi starting up on http://0.0.0.0:8080
+(66138) accepted ('127.0.0.1', 38026)
+127.0.0.1 - - [15/Oct/2026 01:19:31] "GET /aegis/mode HTTP/1.1" 200 173 0.002697
+Pipeline installed on s0 (dpid=0x10)
+Pipeline installed on s1 (dpid=0x11)
+Pipeline installed on s2 (dpid=0x12)
+Pipeline installed on s3 (dpid=0x13)
+Pipeline installed on s4 (dpid=0x14)
+(66138) accepted ('127.0.0.1', 38040)
+127.0.0.1 - - [15/Oct/2026 01:19:32] "GET /aegis/stats HTTP/1.1" 200 299 0.000674
+(66138) accepted ('127.0.0.1', 41890)
+127.0.0.1 - - [15/Oct/2026 01:20:48] "GET /aegis/stats HTTP/1.1" 200 398 0.000970

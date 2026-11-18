@@ -1,0 +1,14 @@
+# Installed into ~/aegis-venv. Ryu itself is installed by scripts/install_ryu.sh
+# (it needs special build flags), so it is not listed here.
+eventlet==0.33.3
+dnspython==2.2.1
+PyYAML>=6.0
+networkx>=3.0
+psutil>=5.9
+pandas>=2.0
+matplotlib>=3.7
+pytest>=7.0
+scapy>=2.5
+requests>=2.28
+# Phase 4 stretch (ML signal E8):
+# scikit-learn>=1.3

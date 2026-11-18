@@ -1,0 +1,31 @@
+loading app /home/dhanush_700810/aegis-zt/controller/aegis_app.py
+loading app ryu.controller.ofp_handler
+creating context wsgi
+instantiating app /home/dhanush_700810/aegis-zt/controller/aegis_app.py of AegisZT
+AEGIS-ZT started: mode=B2, 13 enrolled hosts, 5 switches, logs=/home/dhanush_700810/aegis-zt/results/raw/attacks/B2_S6_r3
+instantiating app ryu.controller.ofp_handler of OFPHandler
+(67233) wsgi starting up on http://0.0.0.0:8080
+(67233) accepted ('127.0.0.1', 41900)
+127.0.0.1 - - [15/Oct/2026 01:20:53] "GET /aegis/mode HTTP/1.1" 200 173 0.003518
+Pipeline installed on s0 (dpid=0x10)
+Pipeline installed on s1 (dpid=0x11)
+Pipeline installed on s2 (dpid=0x12)
+Pipeline installed on s3 (dpid=0x13)
+Pipeline installed on s4 (dpid=0x14)
+(67233) accepted ('127.0.0.1', 41912)
+127.0.0.1 - - [15/Oct/2026 01:20:54] "GET /aegis/stats HTTP/1.1" 200 299 0.000641
+TIER u1: NORMAL -> TRUSTED (score 92.0)
+TIER u2: NORMAL -> TRUSTED (score 92.0)
+TIER u3: NORMAL -> TRUSTED (score 92.0)
+TIER web1: NORMAL -> TRUSTED (score 92.0)
+TIER db1: NORMAL -> TRUSTED (score 92.0)
+TIER col1: NORMAL -> TRUSTED (score 92.0)
+TIER dns1: NORMAL -> TRUSTED (score 92.0)
+TIER cam1: NORMAL -> TRUSTED (score 92.0)
+TIER cam2: NORMAL -> TRUSTED (score 92.0)
+TIER sen1: NORMAL -> TRUSTED (score 92.0)
+TIER adm1: NORMAL -> TRUSTED (score 92.0)
+TIER rem1: NORMAL -> TRUSTED (score 92.0)
+TIER hp1: NORMAL -> TRUSTED (score 92.0)
+(67233) accepted ('127.0.0.1', 40402)
+127.0.0.1 - - [15/Oct/2026 01:22:20] "GET /aegis/stats HTTP/1.1" 200 399 0.000854

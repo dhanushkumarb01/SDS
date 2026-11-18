@@ -1,0 +1,158 @@
+hosts:
+  adm1:
+    ip: 10.0.4.10
+    mac: 00:00:00:00:04:10
+    port: 1
+    role: console
+    services: []
+    switch: s4
+    zone: admin
+  cam1:
+    ip: 10.0.3.21
+    mac: 00:00:00:00:03:21
+    port: 1
+    role: camera
+    services:
+    - tcp/22
+    switch: s3
+    zone: iot
+  cam2:
+    ip: 10.0.3.22
+    mac: 00:00:00:00:03:22
+    port: 2
+    role: camera
+    services:
+    - tcp/22
+    switch: s3
+    zone: iot
+  col1:
+    ip: 10.0.2.30
+    mac: 00:00:00:00:02:30
+    port: 3
+    role: collector
+    services:
+    - tcp/1883
+    - tcp/22
+    switch: s2
+    zone: server
+  db1:
+    ip: 10.0.2.20
+    mac: 00:00:00:00:02:20
+    port: 2
+    role: database
+    services:
+    - tcp/3306
+    - tcp/22
+    switch: s2
+    zone: server
+  dns1:
+    ip: 10.0.2.53
+    mac: 00:00:00:00:02:53
+    port: 4
+    role: dns
+    services:
+    - udp/53
+    - tcp/22
+    switch: s2
+    zone: server
+  hp1:
+    ip: 10.0.9.99
+    mac: 00:00:00:00:09:99
+    port: 6
+    role: honeypot
+    services:
+    - tcp/22
+    - tcp/80
+    - tcp/3306
+    - tcp/1883
+    switch: s0
+    zone: services
+  rem1:
+    ip: 10.0.9.10
+    mac: 00:00:00:00:09:10
+    port: 5
+    role: remediation
+    services:
+    - tcp/8080
+    switch: s0
+    zone: services
+  sen1:
+    ip: 10.0.3.23
+    mac: 00:00:00:00:03:23
+    port: 3
+    role: sensor
+    services:
+    - tcp/22
+    switch: s3
+    zone: iot
+  u1:
+    ip: 10.0.1.11
+    mac: 00:00:00:00:01:11
+    port: 1
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  u2:
+    ip: 10.0.1.12
+    mac: 00:00:00:00:01:12
+    port: 2
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  u3:
+    ip: 10.0.1.13
+    mac: 00:00:00:00:01:13
+    port: 3
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  web1:
+    ip: 10.0.2.10
+    mac: 00:00:00:00:02:10
+    port: 1
+    role: web
+    services:
+    - tcp/80
+    - tcp/22
+    switch: s2
+    zone: server
+links:
+- - s1
+  - 10
+  - s0
+  - 1
+- - s2
+  - 10
+  - s0
+  - 2
+- - s3
+  - 10
+  - s0
+  - 3
+- - s4
+  - 10
+  - s0
+  - 4
+switches:
+  s0:
+    dpid: 16
+    role: core
+  s1:
+    dpid: 17
+    role: edge
+    zone: user
+  s2:
+    dpid: 18
+    role: edge
+    zone: server
+  s3:
+    dpid: 19
+    role: edge
+    zone: iot
+  s4:
+    dpid: 20
+    role: edge
+    zone: admin

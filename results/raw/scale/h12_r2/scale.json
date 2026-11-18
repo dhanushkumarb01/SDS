@@ -1,0 +1,19 @@
+{
+  "extra_hosts": 12,
+  "hosts": 25,
+  "rep": 2,
+  "stats_end": {
+    "mode": "B2",
+    "uptime_s": 47,
+    "switches": 5,
+    "packet_in_total": 131,
+    "decisions_total": 38,
+    "decision_us_mean": 1011.5,
+    "decision_us_p95": 1694.6,
+    "cpu_pct": 0.8,
+    "mem_mb": 69.3,
+    "packet_in_per_s": 2.0,
+    "flow_count": 269,
+    "allow_rules": 76
+  }
+}

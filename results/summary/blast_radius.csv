@@ -1,0 +1,15 @@
+scenario,metric,B0,B1,B2
+S1,attacker still has its normal access after attack (% runs),100.0,100.0,0.0
+S2,attacker still has its normal access after attack (% runs),100.0,100.0,0.0
+S3,attacker still has its normal access after attack (% runs),100.0,100.0,0.0
+S4,attacker still has its normal access after attack (% runs),100.0,100.0,0.0
+S5,attacker still has its normal access after attack (% runs),100.0,100.0,0.0
+S1,open services found by scan,10.0,0.67,0.0
+S5,open services found by slow scan,8.0,2.0,1.0
+S2,targets reached by lateral movement,7.0,1.0,0.0
+S2,successful lateral connections,525.0,4.0,0.0
+S3,collector availability for real sensor (%),100.0,100.0,100.0
+S4,spoofed packets delivered to web1,2338.0,0.0,0.0
+S4,users with poisoned ARP cache,2.0,0.0,0.0
+S6,legit bulk upload throughput (Mbit/s),31180.67,33092.33,33783.33
+S6,hosts wrongly restricted (false alarms),0.0,0.0,0.0

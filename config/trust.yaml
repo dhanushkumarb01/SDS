@@ -1,0 +1,42 @@
+# AEGIS-ZT controller settings: mode, trust model, detectors, leases.
+# See SDS_Phase2_Design.md sections 7 and 10.5.
+
+# mode: open = Phase 3 bring-up (admitted hosts can reach each other, no policy)
+#       B0   = flat learning network (baseline)
+#       B1   = static zones (policy, no trust changes)
+#       B2   = full AEGIS-ZT (policy + trust engine)
+mode: open
+
+window_s: 5                  # monitoring window W
+initial_score: 75
+quiet_period_s: 30           # Q: no penalties for this long before recovery starts
+recovery_per_window: 1       # r (use 3 for live demos)
+probation_s: 600
+probation_ceiling: 84
+
+tiers:                       # lower bound of each tier
+  TRUSTED: 85
+  NORMAL: 70
+  RESTRICTED: 40
+  QUARANTINED: 0
+upgrade_margin: 5            # hysteresis: need boundary + margin ...
+upgrade_windows: 3           # ... for this many consecutive windows
+
+leases:                      # [idle_timeout, hard_timeout] seconds per tier
+  TRUSTED: [120, 600]
+  NORMAL: [60, 300]
+  RESTRICTED: [15, 60]
+  QUARANTINED: [10, 30]
+deny_rule_idle_s: 10
+spoof_drop_idle_s: 30        # Table-0 drop on a port after a spoofing attempt
+remediation: {host: rem1, port: 8080}   # the only service a QUARANTINED host may reach
+
+signals:                     # weight per event, cap per window
+  E1_DENIED_ATTEMPT:  {weight: 2,  cap: 10}
+  E2_SCAN_FANOUT:     {weight: 15, cap: 30, distinct_ports: 10, distinct_hosts: 5}
+  E3_RATE_ANOMALY:    {weight: 20, cap: 20, min_pps: 1000, baseline_factor: 5, ewma_alpha: 0.2,
+                       max_mean_pkt_bytes: 300, rx_tx_ratio: 5}
+  E4_ROLE_VIOLATION:  {weight: 10, cap: 20}
+  E5_SPOOFING:        {weight: 40, cap: 40}
+  E6_PACKETIN_FLOOD:  {weight: 15, cap: 15, rate_per_s: 20, burst: 40}
+  E7_OUT_OF_SCHEDULE: {weight: 5,  cap: 10}

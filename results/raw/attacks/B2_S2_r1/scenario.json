@@ -1,0 +1,30 @@
+{
+  "mode": "B2",
+  "scenario": "S2",
+  "rep": 1,
+  "name": "Lateral movement attempts from a phished laptop",
+  "attacker": "u1",
+  "actor": "u1",
+  "attack_start": 1792003516.7290864,
+  "attack_end": 1792003556.7342024,
+  "window_s": 5,
+  "warmup": 25,
+  "attack": 40,
+  "cooldown": 10,
+  "poisoned_victims": [],
+  "attacker_retains_access": false,
+  "stats_end": {
+    "mode": "B2",
+    "uptime_s": 79,
+    "switches": 5,
+    "packet_in_total": 143,
+    "decisions_total": 22,
+    "decision_us_mean": 534.0,
+    "decision_us_p95": 954.3,
+    "cpu_pct": 0.4,
+    "mem_mb": 69.2,
+    "packet_in_per_s": 0.6,
+    "flow_count": 149,
+    "allow_rules": 26
+  }
+}

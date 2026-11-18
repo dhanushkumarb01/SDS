@@ -1,0 +1,7 @@
+ts,src,dst,proto,port,action,reason,rule_id,decision_us
+1792008997.867,u1,web1,icmp,,ALLOW,R1,R1,513.8
+1792008997.879,u2,web1,icmp,,ALLOW,R1,R1,457.8
+1792008997.887,u3,web1,icmp,,ALLOW,R1,R1,533.3
+1792009002.999,u2,web1,tcp,8000,ALLOW,R8,R8,569.3
+1792009003.002,u2,web1,tcp,8000,ALLOW,R8,R8,498.4
+1792009003.003,u2,web1,tcp,8000,ALLOW,R8,R8,338.1

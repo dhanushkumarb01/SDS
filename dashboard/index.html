@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AEGIS-ZT Live</title>
+<style>
+  :root {
+    --bg: #0d1424; --panel: #151f35; --line: #24314f; --ink: #e6ecf7; --muted: #8b98b3;
+    --user: #4f7cd1; --server: #1aa391; --iot: #e88a32; --admin: #9a6ad6; --services: #7a8699;
+    --trusted: #2fbf71; --normal: #4f9be8; --restricted: #e8b33a; --quarantined: #e5484d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.4 "Segoe UI", system-ui, sans-serif; }
+  header { display: flex; align-items: center; gap: 16px; padding: 14px 22px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  header h1 { font-size: 18px; margin: 0; letter-spacing: .5px; }
+  header h1 span { color: var(--iot); }
+  .pill { padding: 3px 10px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+  .pill b { color: var(--ink); }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 18px; padding: 18px 22px; }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; } }
+  .zones { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
+  .zone { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; border-top: 4px solid var(--c); }
+  .zone h2 { margin: 0 0 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--c); }
+  .host { border: 1px solid var(--line); border-radius: 8px; padding: 9px 10px; margin-bottom: 9px; transition: background .4s; }
+  .host.flash { background: #3a1a22; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+  .name { font-weight: 600; }
+  .ip { color: var(--muted); font-size: 12px; }
+  .tier { font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; color: #0d1424; }
+  .bar { height: 7px; background: #0d1424; border-radius: 4px; margin: 7px 0 5px; overflow: hidden; }
+  .bar i { display: block; height: 100%; border-radius: 4px; transition: width .6s, background .6s; }
+  .btns { display: flex; gap: 6px; margin-top: 4px; }
+  button { background: transparent; border: 1px solid var(--line); color: var(--muted); border-radius: 5px; font-size: 11px; padding: 2px 7px; cursor: pointer; }
+  button:hover { color: var(--ink); border-color: var(--muted); }
+  aside { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px; max-height: calc(100vh - 110px); overflow: auto; }
+  aside h2 { margin: 0 0 8px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); display: flex; justify-content: space-between; }
+  .ev { padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .ev time { color: var(--muted); font-size: 11px; margin-right: 6px; }
+  .ev .d { font-weight: 700; }
+  .neg { color: var(--quarantined); } .pos { color: var(--trusted); } .tc { color: var(--restricted); }
+  label { font-size: 12px; color: var(--muted); }
+  .legend { display: flex; gap: 10px; flex-wrap: wrap; }
+  .legend span { font-size: 12px; color: var(--muted); }
+  .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AEGIS<span>-ZT</span> &nbsp;Live Trust Map</h1>
+  <span class="pill">mode <b id="mode">…</b></span>
+  <span class="pill">switches <b id="sw">…</b></span>
+  <span class="pill">decisions <b id="dec">…</b></span>
+  <span class="pill">decision time <b id="lat">…</b></span>
+  <span class="pill">packet-in/s <b id="pin">…</b></span>
+  <span class="pill">flows <b id="flows">…</b></span>
+  <span class="pill">CPU <b id="cpu">…</b></span>
+  <div class="legend">
+    <span><i style="background:var(--trusted)"></i>TRUSTED ≥85</span>
+    <span><i style="background:var(--normal)"></i>NORMAL ≥70</span>
+    <span><i style="background:var(--restricted)"></i>RESTRICTED ≥40</span>
+    <span><i style="background:var(--quarantined)"></i>QUARANTINED</span>
+  </div>
+</header>
+<main>
+  <section class="zones" id="zones"></section>
+  <aside>
+    <h2><span>Trust ledger: why things happened</span>
+      <label><input type="checkbox" id="showRec"> recovery</label></h2>
+    <div id="events"></div>
+  </aside>
+</main>
+<script>
+const ZONES = [["user","User"],["server","Server"],["iot","IoT"],["admin","Admin"],["services","Services"]];
+const TIERC = {TRUSTED:"var(--trusted)", NORMAL:"var(--normal)", RESTRICTED:"var(--restricted)", QUARANTINED:"var(--quarantined)"};
+const lastTier = {};
+let lastSeq = 0;
+const events = [];
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) k === "style" ? e.style.cssText = v : e.setAttribute(k, v);
+  for (const k of kids) e.append(k);
+  return e;
+}
+
+function sentence(e) {
+  const ev = e.evidence || {};
+  const d = e.delta;
+  switch (e.signal) {
+    case "E1_DENIED_ATTEMPT": return `${ev.count} blocked connection attempt(s)`;
+    case "E2_SCAN_FANOUT": return `scanning: ${ev.distinct_ports} ports on ${ev.distinct_hosts} hosts in ${ev.window_s}s`;
+    case "E3_RATE_ANOMALY": return `flood: ${ev.pps} pkt/s of ${ev.mean_pkt_bytes}-byte packets (limit ${ev.threshold})`;
+    case "E4_ROLE_VIOLATION": return `${ev.count} connection(s) its role should never start`;
+    case "E5_SPOOFING": return `spoofing: claimed ${ev.claimed_ip || ""} (${ev.reason})`;
+    case "E6_PACKETIN_FLOOD": return `flooding the controller: ${ev.packet_ins} requests (limit ${ev.limit})`;
+    case "E7_OUT_OF_SCHEDULE": return `${ev.count} access attempt(s) outside the maintenance window`;
+    case "RECOVERY": return `good behaviour, trust recovering`;
+    case "TIER_CHANGE": return `moved ${e.tier_before} → ${e.tier_after} (${ev.reason})`;
+    case "ADMIN_OVERRIDE": return ev.pinned ? `admin pinned tier to ${ev.pinned}` : `admin cleared the override`;
+    default: return e.signal;
+  }
+}
+
+async function override(name, tier) {
+  await fetch(`/aegis/hosts/${name}/override`, {method: "POST", body: JSON.stringify({tier})});
+  refresh();
+}
+
+function renderHosts(hosts) {
+  const box = document.getElementById("zones");
+  box.innerHTML = "";
+  for (const [z, label] of ZONES) {
+    const zone = el("div", {class: "zone", style: `--c: var(--${z})`}, el("h2", {}, label));
+    for (const h of hosts.filter(x => x.zone === z)) {
+      const flash = lastTier[h.name] && lastTier[h.name] !== h.tier;
+      lastTier[h.name] = h.tier;
+      const score = h.score === null ? null : h.score;
+      const card = el("div", {class: "host" + (flash ? " flash" : "")},
+        el("div", {class: "row"},
+          el("span", {class: "name"}, h.name, " ", el("span", {class: "ip"}, h.ip)),
+          el("span", {class: "tier", style: `background:${TIERC[h.tier]}`}, h.tier + (h.override ? " 📌" : ""))),
+        el("div", {class: "bar"}, el("i", {style: `width:${score ?? 100}%;background:${TIERC[h.tier]}`})),
+        el("div", {class: "row"},
+          el("span", {class: "ip"}, score === null ? "trust engine off" : `trust ${score}` + (h.probation ? " · probation" : "")),
+          el("span", {class: "ip"}, h.role)));
+      if (score !== null) {
+        const q = el("button", {}, "quarantine"); q.onclick = () => override(h.name, "QUARANTINED");
+        const r = el("button", {}, "release");    r.onclick = () => override(h.name, null);
+        card.append(el("div", {class: "btns"}, q, r));
+      }
+      if (flash) setTimeout(() => card.classList.remove("flash"), 1500);
+      zone.append(card);
+    }
+    box.append(zone);
+  }
+}
+
+function renderEvents() {
+  const showRec = document.getElementById("showRec").checked;
+  const box = document.getElementById("events");
+  box.innerHTML = "";
+  for (const e of events.slice().reverse()) {
+    if (!showRec && e.signal === "RECOVERY") continue;
+    const t = new Date(e.ts * 1000).toLocaleTimeString();
+    const cls = e.signal === "TIER_CHANGE" || e.signal === "ADMIN_OVERRIDE" ? "tc" : (e.delta < 0 ? "neg" : "pos");
+    const delta = e.delta ? `${e.delta > 0 ? "+" : ""}${e.delta} ` : "";
+    box.append(el("div", {class: "ev"}, el("time", {}, t),
+      el("b", {}, e.host), " ", el("span", {class: "d " + cls}, delta), sentence(e),
+      e.score_after !== undefined ? el("span", {class: "ip"}, ` → ${e.score_after}`) : ""));
+    if (box.children.length > 120) break;
+  }
+}
+
+async function refresh() {
+  try {
+    const [hosts, stats, evs] = await Promise.all([
+      fetch("/aegis/hosts").then(r => r.json()),
+      fetch("/aegis/stats").then(r => r.json()),
+      fetch(`/aegis/events?since=${lastSeq}`).then(r => r.json())]);
+    renderHosts(hosts);
+    for (const e of evs) { events.push(e); lastSeq = Math.max(lastSeq, e.seq); }
+    if (events.length > 600) events.splice(0, events.length - 600);
+    renderEvents();
+    const set = (id, v) => document.getElementById(id).textContent = v ?? "–";
+    set("mode", stats.mode); set("sw", stats.switches); set("dec", stats.decisions_total);
+    set("lat", stats.decision_us_mean ? `${(stats.decision_us_mean / 1000).toFixed(2)} ms` : "–");
+    set("pin", stats.packet_in_per_s); set("flows", stats.flow_count); set("cpu", stats.cpu_pct !== undefined ? stats.cpu_pct + "%" : "–");
+  } catch (err) { console.warn(err); }
+}
+document.getElementById("showRec").onchange = renderEvents;
+refresh();
+setInterval(refresh, 1000);
+</script>
+</body>
+</html>

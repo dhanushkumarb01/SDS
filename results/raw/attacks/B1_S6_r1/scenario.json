@@ -1,0 +1,30 @@
+{
+  "mode": "B1",
+  "scenario": "S6",
+  "rep": 1,
+  "name": "Heavy but legitimate backup upload (must NOT be punished)",
+  "attacker": null,
+  "actor": "u2",
+  "attack_start": 1792004420.2504497,
+  "attack_end": 1792004470.412524,
+  "window_s": 5,
+  "warmup": 25,
+  "attack": 40,
+  "cooldown": 10,
+  "poisoned_victims": [],
+  "attacker_retains_access": null,
+  "stats_end": {
+    "mode": "B1",
+    "uptime_s": 87,
+    "switches": 5,
+    "packet_in_total": 68,
+    "decisions_total": 19,
+    "decision_us_mean": 789.7,
+    "decision_us_p95": 1197.0,
+    "cpu_pct": 0.2,
+    "mem_mb": 69.3,
+    "packet_in_per_s": 0.0,
+    "flow_count": 153,
+    "allow_rules": 32
+  }
+}

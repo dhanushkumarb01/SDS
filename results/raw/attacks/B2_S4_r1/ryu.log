@@ -1,0 +1,128 @@
+loading app /home/dhanush_700810/aegis-zt/controller/aegis_app.py
+loading app ryu.controller.ofp_handler
+creating context wsgi
+instantiating app /home/dhanush_700810/aegis-zt/controller/aegis_app.py of AegisZT
+AEGIS-ZT started: mode=B2, 13 enrolled hosts, 5 switches, logs=/home/dhanush_700810/aegis-zt/results/raw/attacks/B2_S4_r1
+instantiating app ryu.controller.ofp_handler of OFPHandler
+(15951) wsgi starting up on http://0.0.0.0:8080
+(15951) accepted ('127.0.0.1', 43402)
+127.0.0.1 - - [15/Oct/2026 00:22:56] "GET /aegis/mode HTTP/1.1" 200 173 0.001451
+Pipeline installed on s0 (dpid=0x10)
+Pipeline installed on s1 (dpid=0x11)
+Pipeline installed on s2 (dpid=0x12)
+Pipeline installed on s3 (dpid=0x13)
+Pipeline installed on s4 (dpid=0x14)
+(15951) accepted ('127.0.0.1', 43414)
+127.0.0.1 - - [15/Oct/2026 00:22:57] "GET /aegis/stats HTTP/1.1" 200 299 0.000465
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+TIER sen1: NORMAL -> RESTRICTED (score 40.0)
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+TIER sen1: RESTRICTED -> QUARANTINED (score 38.0)
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+SPOOF/UNENROLLED from sen1: {'claimed_ip': '10.0.2.10', 'claimed_mac': '00:00:00:00:03:23', 'reason': 'ARP_BINDING_MISMATCH'}
+(15951) accepted ('127.0.0.1', 56676)
+127.0.0.1 - - [15/Oct/2026 00:24:15] "GET /aegis/stats HTTP/1.1" 200 399 0.000714

@@ -1,0 +1,12 @@
+# Nmap 7.80 scan initiated Thu Oct 15 00:24:45 2026 as: nmap -sT -n -Pn --scan-delay 1s --max-retries 0 -p 21,22,23,25,80,443,1883,3306,8000,8080 -oG /home/dhanush_700810/aegis-zt/results/raw/attacks/B0_S5_r1/scan.gnmap 10.0.2.10 10.0.2.20 10.0.2.30 10.0.2.53 10.0.4.10
+Host: 10.0.2.10 ()	Status: Up
+Host: 10.0.2.10 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh///, 23/closed/tcp//telnet///, 25/closed/tcp//smtp///, 80/open/tcp//http///, 443/closed/tcp//https///, 1883/closed/tcp//mqtt///, 3306/closed/tcp//mysql///, 8000/open/tcp//http-alt///, 8080/closed/tcp//http-proxy///
+Host: 10.0.2.20 ()	Status: Up
+Host: 10.0.2.20 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh///, 23/closed/tcp//telnet///, 25/closed/tcp//smtp///, 80/closed/tcp//http///, 443/closed/tcp//https///, 1883/closed/tcp//mqtt///, 3306/open/tcp//mysql///, 8000/closed/tcp//http-alt///, 8080/closed/tcp//http-proxy///
+Host: 10.0.2.30 ()	Status: Up
+Host: 10.0.2.30 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh///, 23/closed/tcp//telnet///, 25/closed/tcp//smtp///, 80/closed/tcp//http///, 443/closed/tcp//https///, 1883/open/tcp//mqtt///, 3306/closed/tcp//mysql///, 8000/closed/tcp//http-alt///, 8080/closed/tcp//http-proxy///
+Host: 10.0.2.53 ()	Status: Up
+Host: 10.0.2.53 ()	Ports: 21/closed/tcp//ftp///, 22/open/tcp//ssh///, 23/closed/tcp//telnet///, 25/closed/tcp//smtp///, 80/closed/tcp//http///, 443/closed/tcp//https///, 1883/closed/tcp//mqtt///, 3306/closed/tcp//mysql///, 8000/closed/tcp//http-alt///, 8080/closed/tcp//http-proxy///
+Host: 10.0.4.10 ()	Status: Up
+Host: 10.0.4.10 ()	Ports: 21/closed/tcp//ftp///, 22/closed/tcp//ssh///, 23/closed/tcp//telnet///, 25/closed/tcp//smtp///, 80/closed/tcp//http///, 443/closed/tcp//https///, 1883/closed/tcp//mqtt///, 3306/closed/tcp//mysql///, 8000/closed/tcp//http-alt///, 8080/closed/tcp//http-proxy///
+# Nmap done at Thu Oct 15 00:24:55 2026 -- 5 IP addresses (5 hosts up) scanned in 10.04 seconds

@@ -1,0 +1,34 @@
+# AEGIS-ZT topology and device enrolment (single source of truth).
+# Used by BOTH topology/aegis_topo.py (to build Mininet) and the Ryu controller
+# (to know who is who). See SDS_Phase2_Design.md section 5.
+
+switches:
+  s0: {dpid: 0x10, role: core}
+  s1: {dpid: 0x11, role: edge, zone: user}
+  s2: {dpid: 0x12, role: edge, zone: server}
+  s3: {dpid: 0x13, role: edge, zone: iot}
+  s4: {dpid: 0x14, role: edge, zone: admin}
+
+# Inter-switch links: [switch_a, port_a, switch_b, port_b]
+links:
+  - [s1, 10, s0, 1]
+  - [s2, 10, s0, 2]
+  - [s3, 10, s0, 3]
+  - [s4, 10, s0, 4]
+
+# Enrolled devices. Anything not listed here gets no access.
+# services: listeners started on the host by topology/services.py ("tcp/80", "udp/53")
+hosts:
+  u1:   {zone: user,     role: laptop,      ip: 10.0.1.11, mac: "00:00:00:00:01:11", switch: s1, port: 1, services: []}
+  u2:   {zone: user,     role: laptop,      ip: 10.0.1.12, mac: "00:00:00:00:01:12", switch: s1, port: 2, services: []}
+  u3:   {zone: user,     role: laptop,      ip: 10.0.1.13, mac: "00:00:00:00:01:13", switch: s1, port: 3, services: []}
+  web1: {zone: server,   role: web,         ip: 10.0.2.10, mac: "00:00:00:00:02:10", switch: s2, port: 1, services: [tcp/80, tcp/22]}
+  db1:  {zone: server,   role: database,    ip: 10.0.2.20, mac: "00:00:00:00:02:20", switch: s2, port: 2, services: [tcp/3306, tcp/22]}
+  col1: {zone: server,   role: collector,   ip: 10.0.2.30, mac: "00:00:00:00:02:30", switch: s2, port: 3, services: [tcp/1883, tcp/22]}
+  dns1: {zone: server,   role: dns,         ip: 10.0.2.53, mac: "00:00:00:00:02:53", switch: s2, port: 4, services: [udp/53, tcp/22]}
+  cam1: {zone: iot,      role: camera,      ip: 10.0.3.21, mac: "00:00:00:00:03:21", switch: s3, port: 1, services: [tcp/22]}
+  cam2: {zone: iot,      role: camera,      ip: 10.0.3.22, mac: "00:00:00:00:03:22", switch: s3, port: 2, services: [tcp/22]}
+  sen1: {zone: iot,      role: sensor,      ip: 10.0.3.23, mac: "00:00:00:00:03:23", switch: s3, port: 3, services: [tcp/22]}
+  adm1: {zone: admin,    role: console,     ip: 10.0.4.10, mac: "00:00:00:00:04:10", switch: s4, port: 1, services: []}
+  rem1: {zone: services, role: remediation, ip: 10.0.9.10, mac: "00:00:00:00:09:10", switch: s0, port: 5, services: [tcp/8080]}
+  hp1:  {zone: services, role: honeypot,    ip: 10.0.9.99, mac: "00:00:00:00:09:99", switch: s0, port: 6, services: [tcp/22, tcp/80, tcp/3306, tcp/1883]}

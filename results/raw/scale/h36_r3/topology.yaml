@@ -1,0 +1,446 @@
+hosts:
+  adm1:
+    ip: 10.0.4.10
+    mac: 00:00:00:00:04:10
+    port: 1
+    role: console
+    services: []
+    switch: s4
+    zone: admin
+  cam1:
+    ip: 10.0.3.21
+    mac: 00:00:00:00:03:21
+    port: 1
+    role: camera
+    services:
+    - tcp/22
+    switch: s3
+    zone: iot
+  cam2:
+    ip: 10.0.3.22
+    mac: 00:00:00:00:03:22
+    port: 2
+    role: camera
+    services:
+    - tcp/22
+    switch: s3
+    zone: iot
+  col1:
+    ip: 10.0.2.30
+    mac: 00:00:00:00:02:30
+    port: 3
+    role: collector
+    services:
+    - tcp/1883
+    - tcp/22
+    switch: s2
+    zone: server
+  db1:
+    ip: 10.0.2.20
+    mac: 00:00:00:00:02:20
+    port: 2
+    role: database
+    services:
+    - tcp/3306
+    - tcp/22
+    switch: s2
+    zone: server
+  dns1:
+    ip: 10.0.2.53
+    mac: 00:00:00:00:02:53
+    port: 4
+    role: dns
+    services:
+    - udp/53
+    - tcp/22
+    switch: s2
+    zone: server
+  hp1:
+    ip: 10.0.9.99
+    mac: 00:00:00:00:09:99
+    port: 6
+    role: honeypot
+    services:
+    - tcp/22
+    - tcp/80
+    - tcp/3306
+    - tcp/1883
+    switch: s0
+    zone: services
+  ix0:
+    ip: 10.0.3.100
+    mac: 00:00:00:00:a3:00
+    port: 20
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix1:
+    ip: 10.0.3.101
+    mac: 00:00:00:00:a3:01
+    port: 21
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix10:
+    ip: 10.0.3.110
+    mac: 00:00:00:00:a3:0a
+    port: 30
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix11:
+    ip: 10.0.3.111
+    mac: 00:00:00:00:a3:0b
+    port: 31
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix12:
+    ip: 10.0.3.112
+    mac: 00:00:00:00:a3:0c
+    port: 32
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix13:
+    ip: 10.0.3.113
+    mac: 00:00:00:00:a3:0d
+    port: 33
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix14:
+    ip: 10.0.3.114
+    mac: 00:00:00:00:a3:0e
+    port: 34
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix15:
+    ip: 10.0.3.115
+    mac: 00:00:00:00:a3:0f
+    port: 35
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix16:
+    ip: 10.0.3.116
+    mac: 00:00:00:00:a3:10
+    port: 36
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix17:
+    ip: 10.0.3.117
+    mac: 00:00:00:00:a3:11
+    port: 37
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix2:
+    ip: 10.0.3.102
+    mac: 00:00:00:00:a3:02
+    port: 22
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix3:
+    ip: 10.0.3.103
+    mac: 00:00:00:00:a3:03
+    port: 23
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix4:
+    ip: 10.0.3.104
+    mac: 00:00:00:00:a3:04
+    port: 24
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix5:
+    ip: 10.0.3.105
+    mac: 00:00:00:00:a3:05
+    port: 25
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix6:
+    ip: 10.0.3.106
+    mac: 00:00:00:00:a3:06
+    port: 26
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix7:
+    ip: 10.0.3.107
+    mac: 00:00:00:00:a3:07
+    port: 27
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix8:
+    ip: 10.0.3.108
+    mac: 00:00:00:00:a3:08
+    port: 28
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  ix9:
+    ip: 10.0.3.109
+    mac: 00:00:00:00:a3:09
+    port: 29
+    role: sensor
+    services: []
+    switch: s3
+    zone: iot
+  rem1:
+    ip: 10.0.9.10
+    mac: 00:00:00:00:09:10
+    port: 5
+    role: remediation
+    services:
+    - tcp/8080
+    switch: s0
+    zone: services
+  sen1:
+    ip: 10.0.3.23
+    mac: 00:00:00:00:03:23
+    port: 3
+    role: sensor
+    services:
+    - tcp/22
+    switch: s3
+    zone: iot
+  u1:
+    ip: 10.0.1.11
+    mac: 00:00:00:00:01:11
+    port: 1
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  u2:
+    ip: 10.0.1.12
+    mac: 00:00:00:00:01:12
+    port: 2
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  u3:
+    ip: 10.0.1.13
+    mac: 00:00:00:00:01:13
+    port: 3
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux0:
+    ip: 10.0.1.100
+    mac: 00:00:00:00:a1:00
+    port: 20
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux1:
+    ip: 10.0.1.101
+    mac: 00:00:00:00:a1:01
+    port: 21
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux10:
+    ip: 10.0.1.110
+    mac: 00:00:00:00:a1:0a
+    port: 30
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux11:
+    ip: 10.0.1.111
+    mac: 00:00:00:00:a1:0b
+    port: 31
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux12:
+    ip: 10.0.1.112
+    mac: 00:00:00:00:a1:0c
+    port: 32
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux13:
+    ip: 10.0.1.113
+    mac: 00:00:00:00:a1:0d
+    port: 33
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux14:
+    ip: 10.0.1.114
+    mac: 00:00:00:00:a1:0e
+    port: 34
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux15:
+    ip: 10.0.1.115
+    mac: 00:00:00:00:a1:0f
+    port: 35
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux16:
+    ip: 10.0.1.116
+    mac: 00:00:00:00:a1:10
+    port: 36
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux17:
+    ip: 10.0.1.117
+    mac: 00:00:00:00:a1:11
+    port: 37
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux2:
+    ip: 10.0.1.102
+    mac: 00:00:00:00:a1:02
+    port: 22
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux3:
+    ip: 10.0.1.103
+    mac: 00:00:00:00:a1:03
+    port: 23
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux4:
+    ip: 10.0.1.104
+    mac: 00:00:00:00:a1:04
+    port: 24
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux5:
+    ip: 10.0.1.105
+    mac: 00:00:00:00:a1:05
+    port: 25
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux6:
+    ip: 10.0.1.106
+    mac: 00:00:00:00:a1:06
+    port: 26
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux7:
+    ip: 10.0.1.107
+    mac: 00:00:00:00:a1:07
+    port: 27
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux8:
+    ip: 10.0.1.108
+    mac: 00:00:00:00:a1:08
+    port: 28
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  ux9:
+    ip: 10.0.1.109
+    mac: 00:00:00:00:a1:09
+    port: 29
+    role: laptop
+    services: []
+    switch: s1
+    zone: user
+  web1:
+    ip: 10.0.2.10
+    mac: 00:00:00:00:02:10
+    port: 1
+    role: web
+    services:
+    - tcp/80
+    - tcp/22
+    switch: s2
+    zone: server
+links:
+- - s1
+  - 10
+  - s0
+  - 1
+- - s2
+  - 10
+  - s0
+  - 2
+- - s3
+  - 10
+  - s0
+  - 3
+- - s4
+  - 10
+  - s0
+  - 4
+switches:
+  s0:
+    dpid: 16
+    role: core
+  s1:
+    dpid: 17
+    role: edge
+    zone: user
+  s2:
+    dpid: 18
+    role: edge
+    zone: server
+  s3:
+    dpid: 19
+    role: edge
+    zone: iot
+  s4:
+    dpid: 20
+    role: edge
+    zone: admin

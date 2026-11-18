@@ -1,0 +1,91 @@
+# AEGIS-ZT zone policy (micro-segmentation as code). Default: DENY.
+# See SDS_Phase2_Design.md section 6. Read by controller/policy_engine.py.
+version: 1
+default_action: deny
+
+services:
+  http:      {proto: tcp, port: 80}
+  dns:       {proto: udp, port: 53}
+  mysql:     {proto: tcp, port: 3306}
+  mqtt:      {proto: tcp, port: 1883}
+  ssh:       {proto: tcp, port: 22}
+  remediate: {proto: tcp, port: 8080}
+  backup:    {proto: tcp, port: 8000}
+
+schedules:
+  # demo: always on. Real deployment: start "09:00", end "18:00"
+  maintenance: {days: [mon, tue, wed, thu, fri, sat, sun], start: "00:00", end: "23:59"}
+
+rules:
+  - id: R1
+    desc: Users browse the company web app
+    from: {zone: user}
+    to:   {host: web1}
+    service: http
+    icmp: true
+    essential: false
+    min_tier: RESTRICTED
+
+  - id: R2
+    desc: Users, IoT and servers resolve names
+    from: {zone: [user, iot, server]}
+    to:   {host: dns1}
+    service: dns
+    essential: true
+    min_tier: RESTRICTED
+
+  - id: R3
+    desc: Web tier talks to database tier
+    from: {host: web1}
+    to:   {host: db1}
+    service: mysql
+    essential: true
+    min_tier: RESTRICTED
+
+  - id: R4
+    desc: IoT devices publish telemetry to the collector
+    from: {zone: iot}
+    to:   {host: col1}
+    service: mqtt
+    essential: true
+    min_tier: RESTRICTED
+
+  - id: R5
+    desc: Admins manage servers (trusted + maintenance window)
+    from: {zone: admin}
+    to:   {zone: server}
+    service: ssh
+    min_tier: NORMAL
+    schedule: maintenance
+
+  - id: R6
+    desc: Admins manage IoT devices (trusted + maintenance window)
+    from: {zone: admin}
+    to:   {zone: iot}
+    service: ssh
+    min_tier: NORMAL
+    schedule: maintenance
+
+  - id: R7
+    desc: Any device can always reach remediation (even quarantined)
+    from: {zone: any}
+    to:   {host: rem1}
+    service: remediate
+    min_tier: QUARANTINED
+
+  - id: R8
+    desc: Users upload backups to web1 (bulk transfer; used for S6 and throughput tests)
+    from: {zone: user}
+    to:   {host: web1}
+    service: backup
+    essential: false
+    min_tier: NORMAL
+
+# Which rules each role is expected to initiate (role-violation detector, E4)
+roles:
+  web:       {initiates: [R2, R3, R7]}
+  database:  {initiates: [R2, R7]}
+  collector: {initiates: [R2, R7]}
+  dns:       {initiates: [R7]}
+  camera:    {initiates: [R2, R4, R7]}
+  sensor:    {initiates: [R2, R4, R7]}

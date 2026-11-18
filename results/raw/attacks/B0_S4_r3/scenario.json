@@ -1,0 +1,33 @@
+{
+  "mode": "B0",
+  "scenario": "S4",
+  "rep": 3,
+  "name": "IP spoofing + ARP poisoning from a compromised sensor",
+  "attacker": "sen1",
+  "actor": "sen1",
+  "attack_start": 1792006814.0543609,
+  "attack_end": 1792006854.086391,
+  "window_s": 5,
+  "warmup": 25,
+  "attack": 40,
+  "cooldown": 10,
+  "poisoned_victims": [
+    "u1",
+    "u3"
+  ],
+  "attacker_retains_access": true,
+  "stats_end": {
+    "mode": "B0",
+    "uptime_s": 77,
+    "switches": 5,
+    "packet_in_total": 269,
+    "decisions_total": 0,
+    "decision_us_mean": null,
+    "decision_us_p95": null,
+    "cpu_pct": 0.8,
+    "mem_mb": 69.3,
+    "packet_in_per_s": 1.8,
+    "flow_count": 113,
+    "allow_rules": 0
+  }
+}

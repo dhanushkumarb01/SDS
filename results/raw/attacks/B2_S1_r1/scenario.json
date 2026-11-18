@@ -1,0 +1,30 @@
+{
+  "mode": "B2",
+  "scenario": "S1",
+  "rep": 1,
+  "name": "Port/host scan from a compromised camera",
+  "attacker": "cam1",
+  "actor": "cam1",
+  "attack_start": 1792003273.2454906,
+  "attack_end": 1792003313.30631,
+  "window_s": 5,
+  "warmup": 25,
+  "attack": 40,
+  "cooldown": 10,
+  "poisoned_victims": [],
+  "attacker_retains_access": false,
+  "stats_end": {
+    "mode": "B2",
+    "uptime_s": 79,
+    "switches": 5,
+    "packet_in_total": 183,
+    "decisions_total": 115,
+    "decision_us_mean": 257.7,
+    "decision_us_p95": 786.7,
+    "cpu_pct": 0.4,
+    "mem_mb": 69.3,
+    "packet_in_per_s": 0.4,
+    "flow_count": 149,
+    "allow_rules": 26
+  }
+}

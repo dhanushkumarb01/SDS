@@ -1,0 +1,30 @@
+{
+  "mode": "B2",
+  "scenario": "S3",
+  "rep": 3,
+  "name": "SYN flood from a compromised camera on the collector",
+  "attacker": "cam2",
+  "actor": "cam2",
+  "attack_start": 1792006731.5331666,
+  "attack_end": 1792006771.5832057,
+  "window_s": 5,
+  "warmup": 25,
+  "attack": 40,
+  "cooldown": 10,
+  "poisoned_victims": [],
+  "attacker_retains_access": false,
+  "stats_end": {
+    "mode": "B2",
+    "uptime_s": 79,
+    "switches": 5,
+    "packet_in_total": 119,
+    "decisions_total": 53,
+    "decision_us_mean": 692.8,
+    "decision_us_p95": 1223.8,
+    "cpu_pct": 0.6,
+    "mem_mb": 69.2,
+    "packet_in_per_s": 1.0,
+    "flow_count": 150,
+    "allow_rules": 26
+  }
+}

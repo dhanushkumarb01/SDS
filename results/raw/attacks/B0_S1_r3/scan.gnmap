@@ -1,0 +1,22 @@
+# Nmap 7.80 scan initiated Thu Oct 15 00:58:01 2026 as: nmap -sS -T4 -n -Pn --max-retries 1 -p 1-1024,1883,3306,8000,8080 -oG /home/dhanush_700810/aegis-zt/results/raw/attacks/B0_S1_r3/scan.gnmap 10.0.1.11-13 10.0.2.10 10.0.2.20 10.0.2.30 10.0.2.53 10.0.3.22-23 10.0.4.10
+Host: 10.0.1.11 ()	Status: Up
+Host: 10.0.1.11 ()	Status: Up
+Host: 10.0.1.12 ()	Status: Up
+Host: 10.0.1.12 ()	Status: Up
+Host: 10.0.1.13 ()	Status: Up
+Host: 10.0.1.13 ()	Status: Up
+Host: 10.0.2.10 ()	Status: Up
+Host: 10.0.2.10 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 8000/open/tcp//http-alt///	Ignored State: closed (1025)
+Host: 10.0.2.20 ()	Status: Up
+Host: 10.0.2.20 ()	Ports: 22/open/tcp//ssh///, 3306/open/tcp//mysql///	Ignored State: closed (1026)
+Host: 10.0.2.30 ()	Status: Up
+Host: 10.0.2.30 ()	Ports: 22/open/tcp//ssh///, 1883/open/tcp//mqtt///	Ignored State: closed (1026)
+Host: 10.0.2.53 ()	Status: Up
+Host: 10.0.2.53 ()	Ports: 22/open/tcp//ssh///	Ignored State: closed (1027)
+Host: 10.0.3.22 ()	Status: Up
+Host: 10.0.3.22 ()	Ports: 22/open/tcp//ssh///	Ignored State: closed (1027)
+Host: 10.0.3.23 ()	Status: Up
+Host: 10.0.3.23 ()	Ports: 22/open/tcp//ssh///	Ignored State: closed (1027)
+Host: 10.0.4.10 ()	Status: Up
+Host: 10.0.4.10 ()	Status: Up
+# Nmap done at Thu Oct 15 00:58:02 2026 -- 10 IP addresses (10 hosts up) scanned in 0.31 seconds
